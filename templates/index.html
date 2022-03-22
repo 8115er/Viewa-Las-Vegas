@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Webpage</title>
+</head>
+<body>
+<h1>Hotels</h1>
+<br>
+{% for hotel in hotels %}
+<h3>{{ hotel.name }}</h3> {{hotel.stars}} Stars
+<p>{{hotel.description}}</p>
+<br>
+{% endfor %}
+</body>
+</html>
