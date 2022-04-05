@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"
+xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <head>
     <title>My Webpage</title>
 </head>
 <body>
 <h1>Hotels</h1>
 <br>
-{% for hotel in hotels %}
-<h3>{{ hotel.name }}</h3> {{hotel.stars}} Stars
-<p>{{hotel.description}}</p>
+<f:for each="{hotels}" as="hotel">
+<h3>{hotel.name}</h3> {hotel.stars} Stars
+<p>{hotel.description}</p>
 <br>
-{% endfor %}
+</f:for>
 </body>
 </html>
