@@ -1,16 +1,78 @@
 <!DOCTYPE html>
-<html lang="en"
-xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<html lang="en">
 <head>
-    <title>My Webpage</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title> Las Vegas Hotel Guide </title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
 </head>
-<body>
-<h1>Hotels</h1>
-<br>
-<f:for each="{hotels}" as="hotel">
-<h3>{hotel.name}</h3> {hotel.stars} Stars
-<p>{hotel.description}</p>
-<br>
-</f:for>
+<body id="page-top">
+
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase"> Las Vegas Hotel Guide </h1>
+                <h2 class="text-black-50 mx-auto mt-2 mb-5"> The best hotel guide for tourists visiting <br> Las Vegas
+                </h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Projects-->
+<section class="projects-section bg-dark" id="projects">
+
+    <f:for each="{hotels}" as="hotel">
+    <!-- Caesars Palace -->
+    <div class="container px-lg-5">
+        <!-- Caesars Palace Main -->
+        <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <h2 class="text-white-50"> {hotel.name} </h2>
+                <div>
+                    <f:format.raw>{hotel.stars}</f:format.raw>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-7">
+                <img class="img-fluid mb-3 mb-lg-0" src="{hotel.mainImg}" alt="..."/>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="featured-text text-lg-left">
+                    <p class="text-black-50 text-md-start mb-0">
+                        <f:format.raw>{hotel.description}</f:format.raw>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Caesars Palace Pictures -->
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <img class="img-fluid" src="{hotel.img1}" alt="..."/>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid" src="{hotel.img2}" alt="..."/>
+            </div>
+        </div>
+    </div>
+
+    </f:for>
+</section>
+
+<footer class="footer bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5"> Copyright &copy; Las Vegas Hotel Guide 2022</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
